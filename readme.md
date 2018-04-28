@@ -2,4 +2,4 @@
 ## This document will show why WangZhiwei is ugly
 really ugly
 but he is a good gay
-Git track changes.
+Git track changes of files.
