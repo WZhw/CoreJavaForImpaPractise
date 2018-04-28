@@ -1,2 +1,2 @@
 # WangZhiwei is ugly
-## This documents will show why WangZhiwei is ugly
+## This document will show why WangZhiwei is ugly
