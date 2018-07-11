@@ -14,16 +14,29 @@ public class Prac13lottery {
 				int[] lotteryArray = new int[50];
 				lotteryArray[0] = 6;
 				for(int i = 1; i < lotteryArray.length; i++) {
-					lotteryArray[i] = seed.nextInt(1000000) % 50;
+					lotteryArray[i] = 1;
 				}
 				displaylottery(lotteryArray);
 				while(lotteryArray[0] > 0) {
-					for(int i = 0; i < 6; i++) {
-						
+					int remainToClear = 7;
+					while( remainToClear > 0) {
+						int clearIndex = seed.nextInt() % 50;
+						clearIndex = (clearIndex >= 0) ? (clearIndex) : (clearIndex + 50);
+						if(lotteryArray[clearIndex] == 0 | clearIndex == 0) {
+							continue;
+						}
+						else {
+							lotteryArray[clearIndex] = 0;
+							remainToClear--;
+						}
 					}
+					displaylottery(lotteryArray);
+					lotteryArray[0]--;
 				}
+				displaylottery(lotteryArray);
 			}
 		}catch(Exception e) {
+			System.out.println(e.toString());
 		}finally {
 			in.close();
 		}
@@ -35,14 +48,16 @@ public class Prac13lottery {
 				if(lotteryArraySample[i] == 0) {
 					num++;
 				}
-				System.out.print(Integer.toString(lotteryArraySample[i]) + " ");
+				else {
+					System.out.print(Integer.toString(i) + " ");
+				}
 			}
-			System.out.println("");
+			System.out.println("num : " + Integer.toString(num));
 		}
 		else if (lotteryArraySample[0] == 0) {
 			for(int i = 0; i < lotteryArraySample.length; i++) {
 				if(lotteryArraySample[i] != 0) {
-					System.out.print(Integer.toString(lotteryArraySample[i]) + " ");
+					System.out.print(Integer.toString(i) + " ");
 				}
 			}
 			System.out.println("");
