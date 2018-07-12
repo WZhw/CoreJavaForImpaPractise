@@ -17,7 +17,7 @@ public class Prac14IsCube {
 					int dimension = firstLine.length;
 					int[][] cube = new int[dimension][dimension];
 					for(int i = 0; i < dimension; i++) {
-						cube[0][1] = Integer.parseInt(firstLine[i]);
+						cube[0][i] = Integer.parseInt(firstLine[i]);
 					}
 					for(int i = 1; i < dimension; i++) {
 						inputLine = in.nextLine();
@@ -45,15 +45,19 @@ public class Prac14IsCube {
 			int row_sum = 0;
 			for(int iterator : cube[i]) {
 				row_sum += iterator;
+				//System.out.println("row_sum = " + Integer.toString(row_sum));
 			}
 			int col_sum = 0;
 			for(int j = 0; j < dimension; j++) {
 				col_sum += cube[j][i];
+				//System.out.println("col_sum = " + Integer.toString(col_sum));
 			}
 			if(row_sum == sum && col_sum == sum) {
 				
 			}
 			else {
+				System.out.println("row_sum = " + Integer.toString(row_sum));
+				System.out.println("col_sum = " + Integer.toString(col_sum));
 				return false;
 			}
 		}
@@ -69,6 +73,8 @@ public class Prac14IsCube {
 			return true;
 		}
 		else {
+			System.out.println("diagonal_sum = " + Integer.toString(diagonal_sum));
+			System.out.println("other_diagonal_sum = " + Integer.toString(other_diagonal_sum));
 			return false;
 		}
 	}
