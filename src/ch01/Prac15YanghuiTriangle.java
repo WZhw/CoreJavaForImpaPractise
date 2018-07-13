@@ -13,6 +13,7 @@ public class Prac15YanghuiTriangle {
 				int n = Integer.parseInt(inputLine);
 				ArrayList<ArrayList<Integer>> YanghuiTriangle = new ArrayList<ArrayList<Integer>>();
 				for(int i = 0; i < n; i++) {
+					ArrayList<Integer> 
 					YanghuiTriangle.add(ArrayList<Integer>);
 				}
 			}
