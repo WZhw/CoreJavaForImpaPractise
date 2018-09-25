@@ -15,9 +15,9 @@ public class Prac01Calendar {
                 String[] dateArray = inputLine.split("\\s+");
                 int year = Integer.parseInt(dateArray[0]);
                 int month = Integer.parseInt(dateArray[1]);
-                int day = Integer.parseInt(dateArray[2]);
-                LocalDate date = LocalDate.of(year, month, day);
-                LocalDate firstDayOfThisMonth = LocalDate.of(year, month, day);
+                //int day = Integer.parseInt(dateArray[2]);
+                //LocalDate date = LocalDate.of(year, month, day);
+                LocalDate firstDayOfThisMonth = LocalDate.of(year, month, 1);
                 displayThisMonthCalendar(firstDayOfThisMonth);
             }
 
@@ -33,7 +33,14 @@ public class Prac01Calendar {
     public static void displayThisMonthCalendar(LocalDate firstDayOfThisMonth){
         DayOfWeek firstDayOfWeek = firstDayOfThisMonth.getDayOfWeek();
         int firstDayOfWeekValue = firstDayOfWeek.getValue();
+        /*
         System.out.println("Sun Mon Tue Wed Thu Fri Sat ");
+        */
+        String[] weekHeadArray = {"日", "一", "二", "三", "四", "五", "六"};
+        for(String iterator: weekHeadArray){
+            System.out.printf("%s  ", iterator);
+        }
+        System.out.println("");
         int tabValue = firstDayOfWeekValue % 7;
         for(int i = 0; i < tabValue; i++){
             System.out.print("    ");
